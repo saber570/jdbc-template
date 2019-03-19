@@ -13,18 +13,18 @@ public class TestServiceImpl implements TestService {
 
   @Override
   public void create(String name, Integer age) {
-    jdbcTemplate.update("insert into USER(NAME, AGE) values(?, ?)", name, age);
+    jdbcTemplate.update("insert into USER_1(NAME, AGE) values(?, ?)", name, age);
   }
   @Override
   public void deleteByName(String name) {
-    jdbcTemplate.update("delete from USER where NAME = ?", name);
+    jdbcTemplate.update("delete from USER_1 where NAME = ?", name);
   }
   @Override
   public Integer getAllUsers() {
-    return jdbcTemplate.queryForObject("select count(1) from USER", Integer.class);
+    return jdbcTemplate.queryForObject("select count(1) from USER_1", Integer.class);
   }
   @Override
   public void deleteAllUsers() {
-    jdbcTemplate.update("delete from USER");
+    jdbcTemplate.update("delete from USER_1");
   }
 }
